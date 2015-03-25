@@ -5,6 +5,32 @@
 # SPDX-License-Identifier:	GPL-2.0+
 #
 
+Preface:
+========
+
+This git repository is a branch of u-boot bootloader which supports
+a working version of u-boot for Birdland's BAV335x hardware boards.
+(more info at: http://birdland.com/oem/bav335x-network-processor).
+
+The added code in this branch is actually part of u-boot's current
+git repo. Unfortunately, u-boot is undergoing major changes with
+the new driver model and linux-like menuconfig making it difficult
+to maintain this code in realtime. For the time being, we are
+maintaining this stable working branch repo.
+
+Install summary:
+# Get a cross compiled for arm:
+$ wget -c https://releases.linaro.org/14.09/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux.tar.xz
+$ tar zxvf gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux.tar.xz
+$ export CC=<path-to>/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-
+# Clone this repo and build
+$ make ARCH=arm CROSS_COMPILE=${CC} distclean
+$ make ARCH=arm CROSS_COMPILE=${CC} birdland_bav335b_defconfig
+$ make ARCH=arm CROSS_COMPILE=${CC}
+# Copy MLO and u-boot.img to bootable DOS partition
+# Along with sample uEnv.txt here included.
+
+
 Summary:
 ========
 

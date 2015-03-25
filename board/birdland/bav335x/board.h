@@ -25,7 +25,7 @@ enum board_type {UNKNOWN, BAV335A, BAV335B};
  * Additionally, the Serial-EE can store the specific version of the
  * board it runs on, and overwrite the defaults in _defconfig
  */
-#define HDR_NO_OF_MAC_ADDR	3
+#define HDR_NO_OF_MAC_ADDR	2
 #define HDR_ETH_ALEN		6
 #define HDR_NAME_LEN		8
 
